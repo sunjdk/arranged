@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>主题详情</title>
+</head>
+<body>
+	<table align="center" border=1>
+		<tr>
+			<td><h5>{$topic.title}</h5>{$topic.createtime|date="Y-m-d H:i:s",###}  </td>			
+		</tr>
+		<tr>
+			<td><b>{$topicuser.user.username}</b> <b><img width="50" height="50" src="{$topicuser.user.avatar}" alt="" /></b></td>
+		</tr>
+		<tr><td><p>{$topic.content}</p></td></tr>
+		<tr>
+			<td>
+			
+			<form action="{:url('comment/adddo')}" method="post">
+				<table>
+					<tr>
+						<td>我要评论</td>
+					</tr>
+					<tr>
+						<td><input type="text" readonly name="tid" value="{$topic.id}"/></td>
+					</tr>
+					<tr>
+						<td><textarea name="comment" cols="30" rows="10"></textarea></td>
+					</tr>
+					<tr>
+						<td>请输入验证码：<input type="text" name="verify" /><br><img onclick="this.src='{:captcha_src()}?'+Math.random();" style="cursor:pointer" src="{:captcha_src()}" alt="captcha" /></td>
+					</tr>
+					<tr>
+						<td><button type="submit">发布评论</button></td>
+					</tr>
+					
+				</table>
+			</form>
+			
+			</td>
+		</tr>
+		{volist name="topic.comment" id='vo'}
+			<tr>
+				<td>{$vo.content|mb_substr=0,30}</td>
+			</tr>
+		{/volist}
+	</table>
+</body>
+</html>

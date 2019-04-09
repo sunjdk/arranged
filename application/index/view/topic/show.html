@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>主题列表</title>
+	<style>
+	ul,li{margin:0;padding:0;list-style-type:none}
+	ul li{display: inline-block;}
+	</style>
+</head>
+<body>
+	<table border="1" align="center">
+		<tr>
+			<td colspan="3" align="center"><a href="{:url('index')}">继续发表话题</a></td>
+		</tr>
+		<tr>
+			<td>ID</td>
+			<td>文章标题</td>
+			<td>发布时间</td>
+		</tr>
+		{volist name="topic" id="vo"}
+			<tr>
+				<td>{$vo.id}</td>
+				<td><a href="{:url('detail',array('id'=>$vo['id']))}">{$vo.title}</a></td>
+				<td>{$vo.createtime|date="Y-m-d H:i",###}</td>
+			</tr>
+		{/volist}
+		<tr>
+			<td colspan="3" align="center">
+			{$topic->render()}
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

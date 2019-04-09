@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>发布话题</title>
+</head>
+<body>
+	<form action="{:url('publish')}" method="post">		
+		<table border="1" align="center">
+			<tr>
+				<td colspan=2 align="center">发布话题</td>
+			</tr>
+			<tr>
+				<td>话题标题：</td>
+				<td><input type="text" name="title" style="width:600px;"/></td>
+			</tr>
+			<tr>
+				<td>话题内容</td>
+				<td><textarea name="content" style="width:600px;height:300px;"></textarea></td>
+			</tr>
+			<tr>
+				<td>验证码：</td>
+				<td><input type="text" name="verify"/> <img onclick="this.src='{:captcha_src()}?'+Math.random();" style="cursor:pointer;height:25px;" align =“absmiddle”  src="{:captcha_src()}" alt="captcha" /></td>
+			</tr>
+			<tr>
+				<td>令牌环：</td>
+				<td><input style="width:300px" type="text" name="__token__" value="{$Request.token}" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><button type="submit">发布</button></td>
+			</tr>
+			
+		</table>
+	</form>
+</body>
+</html>

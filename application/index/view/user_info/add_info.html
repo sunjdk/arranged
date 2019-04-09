@@ -1,0 +1,541 @@
+<style>
+.profile-avatar-container {
+	position: relative;
+	width: 100px;
+}
+
+.profile-avatar-container .profile-user-img {
+	width: 100px;
+	height: 100px;
+}
+
+.profile-avatar-container .profile-avatar-text {
+	display: none;
+}
+
+.profile-avatar-container:hover .profile-avatar-text {
+	display: block;
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	background: #444;
+	opacity: .6;
+	color: #fff;
+	top: 0;
+	left: 0;
+	line-height: 100px;
+	text-align: center;
+}
+
+.profile-avatar-container button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 100px;
+	opacity: 0;
+}
+</style>
+<div id="content-container" class="container">
+	<div class="row">
+		<div class="col-md-3">{include file="common/sidenav" /}</div>
+		<div class="col-md-9">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2 class="page-header">
+						<a href="{:url('User/profile')}">{:__('Profile')}</a>|<a
+							href="{:url('UserInfo/addInfo')}">基本资料</a>
+					</h2>
+
+					<form id="profile-form" class="form-horizontal" role="form"
+						data-toggle="validator" method="POST"
+						action="{:url('api/user/profile')}">
+						{:token()} <input type="hidden" name="avatar" id="c-avatar"
+							value="{$user.avatar}" />
+
+						<div class="mine-details">
+							<div class="basics-title">为保证资料真实有效，灰色字体信息不得随意修改，若需修改请联系客服（010-57835066）。</div>
+							<ul class="material-twoColumn fn-clear">
+								<li class="twoColumn-list"><span class="twoColumn-column">昵称：</span>
+									<span class="twoColumn-info"> <input value="史蒂夫"
+										class="mine-input mine-input1"
+										onmousedown="send_jy_pv2('|1027534_0|');" name="new_nickname">
+								</span></li>
+								<li class="twoColumn-list"><span class="twoColumn-column">性别：</span>
+									<span class="twoColumn-info"> <input value="男"
+										class="mine-input mine-input1 mine-inputDis" readonly="">
+								</span></li>
+								<li class="twoColumn-list"><span class="twoColumn-column">出生日期：</span>
+									<span class="twoColumn-info"> <input value="1989-02-01"
+										class="mine-input mine-input1 mine-inputDis" readonly="">
+								</span></li>
+								<li class="twoColumn-list"><span class="twoColumn-column">生肖：</span>
+									<span class="twoColumn-info"> <input value="狗"
+										class="mine-input mine-input1 mine-inputDis" readonly="">
+								</span></li>
+								<li class="twoColumn-list"><span class="twoColumn-column">星座
+										：</span> <span class="twoColumn-info"> <input value="水瓶座"
+										class="mine-input mine-input1 mine-inputDis" readonly="">
+								</span></li>
+								<li class="twoColumn-list blockLi"><span
+									class="twoColumn-column">婚姻状况：</span> <select name="" id="">
+										<option value="">未婚</option>
+										<option value="">离异</option>
+										<option value="">丧偶</option>
+								</select> </span> </span></li>
+							</ul>
+							<div class="basics-title">身高、学历、月薪的信息不可随意修改，一个月内只允许修改一次。</div>
+							<ul class="material-twoColumn fn-clear">
+								<li class="twoColumn-list blockLi"><span
+									class="twoColumn-column">身高：</span> <select name="" id="">
+										<option value="">130cm</option>
+										<option value="">131cm</option>
+										<option value="">132cm</option>
+										<option value="">133cm</option>
+										<option value="">134cm</option>
+										<option value="">135cm</option>
+										<option value="">136cm</option>
+										<option value="">137cm</option>
+										<option value="">138cm</option>
+										<option value="">139cm</option>
+										<option value="">140cm</option>
+										<option value="">141cm</option>
+										<option value="">142cm</option>
+										<option value="">143cm</option>
+										<option value="">144cm</option>
+										<option value="">145cm</option>
+										<option value="">146cm</option>
+										<option value="">147cm</option>
+										<option value="">148cm</option>
+										<option value="">149cm</option>
+										<option value="">150cm</option>
+										<option value="">151cm</option>
+										<option value="">152cm</option>
+										<option value="">153cm</option>
+										<option value="">154cm</option>
+										<option value="">155cm</option>
+										<option value="">156cm</option>
+										<option value="">157cm</option>
+										<option value="">158cm</option>
+										<option value="">159cm</option>
+										<option value="">160cm</option>
+										<option value="">161cm</option>
+										<option value="">162cm</option>
+										<option value="">163cm</option>
+										<option value="">164cm</option>
+										<option value="">165cm</option>
+										<option value="">166cm</option>
+										<option value="">167cm</option>
+										<option value="">168cm</option>
+										<option value="">169cm</option>
+										<option value="">170cm</option>
+										<option value="">171cm</option>
+										<option value="">172cm</option>
+										<option value="">173cm</option>
+										<option value="">174cm</option>
+										<option value="">175cm</option>
+										<option value="">176cm</option>
+										<option value="">177cm</option>
+										<option value="">178cm</option>
+										<option value="">179cm</option>
+										<option value="">180cm</option>
+										<option value="">181cm</option>
+										<option value="">182cm</option>
+										<option value="">183cm</option>
+										<option value="">184cm</option>
+										<option value="">185cm</option>
+										<option value="">186cm</option>
+										<option value="">187cm</option>
+										<option value="">188cm</option>
+										<option value="">189cm</option>
+										<option value="">190cm</option>
+										<option value="">191cm</option>
+										<option value="">192cm</option>
+										<option value="">193cm</option>
+										<option value="">194cm</option>
+										<option value="">195cm</option>
+										<option value="">196cm</option>
+										<option value="">197cm</option>
+										<option value="">198cm</option>
+										<option value="">199cm</option>
+										<option value="">200cm</option>
+										<option value="">201cm</option>
+										<option value="">202cm</option>
+										<option value="">203cm</option>
+										<option value="">204cm</option>
+										<option value="">205cm</option>
+										<option value="">206cm</option>
+										<option value="">207cm</option>
+										<option value="">208cm</option>
+										<option value="">209cm</option>
+										<option value="">210cm</option>
+										<option value="">211cm</option>
+										<option value="">212cm</option>
+										<option value="">213cm</option>
+										<option value="">214cm</option>
+										<option value="">215cm</option>
+										<option value="">216cm</option>
+										<option value="">217cm</option>
+										<option value="">218cm</option>
+										<option value="">219cm</option>
+										<option value="">220cm</option>
+										<option value="">221cm</option>
+										<option value="">222cm</option>
+										<option value="">223cm</option>
+										<option value="">224cm</option>
+										<option value="">225cm</option>
+										<option value="">226cm</option>
+										<option value="">227cm</option>
+										<option value="">228cm</option>
+										<option value="">229cm</option>
+										<option value="">230cm</option>
+										<option value="">231cm</option>
+										<option value="">232cm</option>
+										<option value="">233cm</option>
+										<option value="">234cm</option>
+										<option value="">235cm</option>
+										<option value="">236cm</option>
+										<option value="">237cm</option>
+										<option value="">238cm</option>
+										<option value="">239cm</option>
+										<option value="">240cm</option>
+
+								</select> <span class="basics-vice-hit">可以修改</span> </span></li>
+								<li class="twoColumn-list blockLi"><span
+									class="twoColumn-column">学历：</span> <select name=""
+									id="N493802284411">
+										<option>高中中专及以下</option>
+										<option>大专</option>
+										<option>本科</option>
+										<option>双学士</option>
+										<option>硕士</option>
+										<option>博士</option>
+								</select></li>
+								<li class="twoColumn-list blockLi"><span
+									class="twoColumn-column">月薪：</span> <select name="" id="">
+										<option>2000元以下</option>
+										<option>2000～5000元</option>
+										<option>5000～10000元</option>
+										<option>10000～20000元</option>
+										<option>20000～50000元</option>
+										<option>50000元以上</option>
+								</select></li>
+							</ul>
+
+							<div class="basics-title2">以下信息，希望您依照实际情况谨慎修改。</div>
+							<ul class="material-twoColumn fn-clear">
+								<li class="twoColumn-list blockLi"><span
+									class="twoColumn-column">所在地区：</span> <span
+									class="twoColumn-info fn-clear"> 
+									<select name="" id="">
+
+											<option>北京</option>
+											<option>天津</option>
+											<option>河北</option>
+											<option>山西</option>
+											<option>内蒙古</option>
+											<option>辽宁</option>
+											<option>吉林</option>
+											<option>黑龙江</option>
+											<option>上海</option>
+											<option>江苏</option>
+											<option>浙江</option>
+											<option>安徽</option>
+											<option>福建</option>
+											<option>江西</option>
+											<option>山东</option>
+											<option>河南</option>
+											<option>湖北</option>
+											<option>湖南</option>
+											<option>广东</option>
+											<option>广西</option>
+											<option>海南</option>
+											<option>重庆</option>
+											<option>四川</option>
+											<option>贵州</option>
+											<option>云南</option>
+											<option>西藏</option>
+											<option>陕西</option>
+											<option>甘肃</option>
+											<option>青海</option>
+											<option>宁夏</option>
+											<option>新疆</option>
+											<option>台湾</option>
+											<option>香港</option>
+											<option>澳门</option>
+											<option>钓鱼岛</option>
+											<option>美国</option>
+											<option>其他国家</option>
+											<option>南京</option>
+											<option>无锡</option>
+											<option>徐州</option>
+											<option>常州</option>
+											<option>苏州</option>
+											<option>南通</option>
+											<option>连云港</option>
+											<option>淮安</option>
+											<option>盐城</option>
+											<option>扬州</option>
+											<option>镇江</option>
+											<option>泰州</option>
+											<option>宿迁</option>
+									</select> <a class="jump-map fn-left"
+										href="http://map.jiayuan.com/result.php" target="_blank">前往我的地图</a>
+								</span>
+
+									<ul class="mine-payUl reason"
+										style="margin: 10px 118px 5px; display: none;">
+										<li class="mine-payList"><label class="mine-simRadio">
+												<span class="mine-simRadioIco"> <input type="radio"
+													name="change_area_reason" class="mine-radio" value="1">
+											</span> <span class="mine-radioTxt">工作地区变更</span>
+										</label></li>
+										<li class="mine-payList"><label class="mine-simRadio">
+												<span class="mine-simRadioIco"> <input type="radio"
+													name="change_area_reason" class="mine-radio" value="2">
+											</span> <span class="mine-radioTxt">定居地区变更</span>
+										</label></li>
+										<li class="mine-payList"><label class="mine-simRadio">
+												<span class="mine-simRadioIco"> <input type="radio"
+													name="change_area_reason" class="mine-radio" value="3">
+											</span> <span class="mine-radioTxt">求学地区变更</span>
+										</label></li>
+										<li class="mine-payList mine-payLEnd" style=""><label
+											class="mine-simRadio"> <span class="mine-simRadioIco">
+													<input type="radio" name="change_area_reason"
+													class="mine-radio" value="4">
+											</span> <span class="mine-radioTxt">误操作导致地区填写错误</span>
+										</label></li>
+										<li style="clear: both;"></li>
+									</ul></li>
+								<li class="twoColumn-list "><span class="twoColumn-column">有无子女：</span>
+
+									<span class="twoColumn-info"> <select name="" id="">
+											<option value="">无小孩</option>
+											<option value="">有男孩归自己</option>
+											<option value="">有女孩归自己</option>
+											<option value="">有男孩归对方</option>
+											<option value="">有女孩归对方</option>
+									</select>
+								</span></li>
+								<li class="twoColumn-list"><span class="twoColumn-column">户口：</span>
+									<span class="twoColumn-info fn-clear"> <select name=""
+										id="">
+
+											<option>北京</option>
+											<option>天津</option>
+											<option>河北</option>
+											<option>山西</option>
+											<option>内蒙古</option>
+											<option>辽宁</option>
+											<option>吉林</option>
+											<option>黑龙江</option>
+											<option>上海</option>
+											<option>江苏</option>
+											<option>浙江</option>
+											<option>安徽</option>
+											<option>福建</option>
+											<option>江西</option>
+											<option>山东</option>
+											<option>河南</option>
+											<option>湖北</option>
+											<option>湖南</option>
+											<option>广东</option>
+											<option>广西</option>
+											<option>海南</option>
+											<option>重庆</option>
+											<option>四川</option>
+											<option>贵州</option>
+											<option>云南</option>
+											<option>西藏</option>
+											<option>陕西</option>
+											<option>甘肃</option>
+											<option>青海</option>
+											<option>宁夏</option>
+											<option>新疆</option>
+											<option>台湾</option>
+											<option>香港</option>
+											<option>澳门</option>
+											<option>钓鱼岛</option>
+											<option>美国</option>
+											<option>其他国家</option>
+											<option>南京</option>
+											<option>无锡</option>
+											<option>徐州</option>
+											<option>常州</option>
+											<option>苏州</option>
+											<option>南通</option>
+											<option>连云港</option>
+											<option>淮安</option>
+											<option>盐城</option>
+											<option>扬州</option>
+											<option>镇江</option>
+											<option>泰州</option>
+											<option>宿迁</option>
+									</select>
+
+								</span></li>
+								<li class="twoColumn-list"><span class="twoColumn-column">血型：</span>
+									<span class="twoColumn-info"> <select name="" id="">
+											<option>A型</option>
+											<option>B型</option>
+											<option>O型</option>
+											<option>AB型</option>
+											<option>其它</option>
+											<option>保密</option>
+									</select>
+								</span></li>
+								<li class="twoColumn-list"><span class="twoColumn-column">民族：</span>
+									<span class="twoColumn-info"> <select name="" id="">
+											<option>汉族</option>
+											<option>藏族</option>
+											<option>朝鲜族</option>
+											<option>蒙古族</option>
+											<option>回族</option>
+											<option>满族</option>
+											<option>维吾尔族</option>
+											<option>壮族</option>
+											<option>彝族</option>
+											<option>苗族</option>
+									</select>
+
+								</span></li>
+								<li class="twoColumn-list"><span class="twoColumn-column">购车情况：</span>
+									<span class="twoColumn-info"> <select name="" id="">
+											<option>暂未购车</option>
+											<option>已购车（经济型）</option>
+											<option>已购车（中档型）</option>
+											<option>已购车（豪华型）</option>
+											<option>单位用车</option>
+											<option>需要时购置</option>
+									</select>
+
+								</span></li>
+								<li class="twoColumn-list"><span class="twoColumn-column">住房情况：</span>
+									<span class="twoColumn-info"> <select name="" id="">
+											<option>暂未购房</option>
+											<option>需要时购置</option>
+											<option>已购房（有贷款）</option>
+											<option>已购房（无贷款）</option>
+											<option>与人合租</option>
+											<option>独自租房</option>
+											<option>与父母同住</option>
+											<option>住亲朋家</option>
+											<option>住单位房</option>
+									</select>
+								</span></li>
+							</ul>
+							<div class="material-btnTop">
+								<button type="submit">保存</button>
+							</div>
+
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/html" id="emailtpl">
+	<form id="email-form" class="form-horizontal form-layer" method="POST" action="{:url('api/user/changeemail')}">
+		<div class="form-body">
+			<input type="hidden" name="action" value="changeemail" />
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3">{:__('New Email')}:</label>
+				<div class="col-xs-12 col-sm-8">
+					<input type="text" class="form-control" id="email" name="email" value="" data-rule="required;email;remote({:url('api/validate/check_email_available')}, event=changeemail, id={$user.id})" placeholder="{:__('New email')}">
+					<span class="msg-box"></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3">{:__('Captcha')}:</label>
+				<div class="col-xs-12 col-sm-8">
+					<div class="input-group">
+						<input type="text" name="captcha" id="email-captcha" class="form-control" data-rule="required;length(4);integer[+];remote({:url('api/validate/check_ems_correct')}, event=changeemail, email:#email)" />
+						<span class="input-group-btn" style="padding:0;border:none;">
+                            <a href="javascript:;" class="btn btn-info btn-captcha" data-url="{:url('api/ems/send')}" data-type="email" data-event="changeemail">获取验证码</a>
+                        </span>
+					</div>
+					<span class="msg-box"></span>
+				</div>
+			</div>
+		</div>
+		<div class="form-footer">
+			<div class="form-group" style="margin-bottom:0;">
+				<label class="control-label col-xs-12 col-sm-3"></label>
+				<div class="col-xs-12 col-sm-8">
+					<button type="submit" class="btn btn-md btn-info">{:__('Submit')}</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</script>
+<script type="text/html" id="mobiletpl">
+	<form id="mobile-form" class="form-horizontal form-layer" method="POST" action="{:url('api/user/changemobile')}">
+		<div class="form-body">
+			<input type="hidden" name="action" value="changemobile" />
+			<div class="form-group">
+				<label for="c-mobile" class="control-label col-xs-12 col-sm-3">{:__('New mobile')}:</label>
+				<div class="col-xs-12 col-sm-8">
+					<input type="text" class="form-control" id="mobile" name="mobile" value="" data-rule="required;mobile;remote({:url('api/validate/check_mobile_available')}, event=changemobile, id={$user.id})" placeholder="{:__('New mobile')}">
+					<span class="msg-box"></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="mobile-captcha" class="control-label col-xs-12 col-sm-3">{:__('Captcha')}:</label>
+				<div class="col-xs-12 col-sm-8">
+					<div class="input-group">
+						<input type="text" name="captcha" id="mobile-captcha" class="form-control" data-rule="required;length(4);integer[+];remote({:url('api/validate/check_sms_correct')}, event=changemobile, mobile:#mobile)" />
+						<span class="input-group-btn" style="padding:0;border:none;">
+                            <a href="javascript:;" class="btn btn-info btn-captcha" data-url="{:url('api/sms/send')}" data-type="mobile" data-event="changemobile">获取验证码</a>
+                        </span>
+					</div>
+					<span class="msg-box"></span>
+				</div>
+			</div>
+		</div>
+		<div class="form-footer">
+			<div class="form-group" style="margin-bottom:0;">
+				<label class="control-label col-xs-12 col-sm-3"></label>
+				<div class="col-xs-12 col-sm-8">
+					<button type="submit" class="btn btn-md btn-info">{:__('Submit')}</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</script>
+<style>
+.form-layer {
+	height: 100%;
+	min-height: 150px;
+	min-width: 300px;
+}
+
+.form-body {
+	width: 100%;
+	overflow: auto;
+	top: 0;
+	position: absolute;
+	z-index: 10;
+	bottom: 50px;
+	padding: 15px;
+}
+
+.form-layer .form-footer {
+	height: 50px;
+	line-height: 50px;
+	background-color: #ecf0f1;
+	width: 100%;
+	position: absolute;
+	z-index: 200;
+	bottom: 0;
+	margin: 0;
+}
+
+.form-footer .form-group {
+	margin-left: 0;
+	margin-right: 0;
+}
+</style>
