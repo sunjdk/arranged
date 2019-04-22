@@ -37,7 +37,7 @@ class Topic extends Frontend{
 					$this->error('话题发表失败，请检查问题');
 				}			
 			}else{
-				$this->error($validate->getError());
+				$this->error(__($validate->getError()));
 			}
 			
 		}else{
@@ -54,13 +54,13 @@ class Topic extends Frontend{
 	public function detail(){
 		$id=input('param.id');
 		
-		$topic=$this->model->with('comment')->find($id);
-		$topicuser=$this->model->with('user')->find($id);
+		$topic=$this->model->with('user')->find($id);
+		//$topicuser=$this->model->with('user')->find($id);
 
 		//$topic=collection($this->model->with('user')->find())->toArray()   ;
 		//print_r($topic->user->username);die;
 		$this->assign('topic',$topic);
-		$this->assign('topicuser',$topicuser);
+		//$this->assign('topicuser',$topicuser);
 		return $this->fetch();
 	}
 }

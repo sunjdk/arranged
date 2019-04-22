@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-04-09 23:49:16
+Date: 2019-04-22 08:27:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,7 +40,7 @@ CREATE TABLE `fa_admin` (
 -- ----------------------------
 -- Records of fa_admin
 -- ----------------------------
-INSERT INTO `fa_admin` VALUES ('1', 'admin888', 'Admin', '2b60d5e6b6db73b0c6232086c15b692a', 'a9a7ce', '/assets/img/avatar.png', '1620016116@qq.com', '0', '1554397986', '1492186163', '1554397986', 'cef02c97-9011-4093-9c2f-bc39a6284b61', 'normal');
+INSERT INTO `fa_admin` VALUES ('1', 'admin888', 'Admin', '2b60d5e6b6db73b0c6232086c15b692a', 'a9a7ce', '/assets/img/avatar.png', '1620016116@qq.com', '0', '1555848368', '1492186163', '1555848368', '49a571de-8b07-4a41-a3e1-eee286bd0139', 'normal');
 
 -- ----------------------------
 -- Table structure for `fa_admin_log`
@@ -58,7 +58,7 @@ CREATE TABLE `fa_admin_log` (
   `createtime` int(10) DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`id`),
   KEY `name` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='管理员日志表';
 
 -- ----------------------------
 -- Records of fa_admin_log
@@ -113,6 +113,8 @@ INSERT INTO `fa_admin_log` VALUES ('47', '1', 'admin888', '/admin/user/group/edi
 INSERT INTO `fa_admin_log` VALUES ('48', '1', 'admin888', '/admin/user/rule/add?dialog=1', '会员管理 会员规则 添加', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"1\",\"name\":\"index\\/topic\\/show\",\"title\":\"\\u8bdd\\u9898\\u5217\\u8868\",\"remark\":\"\\u8bdd\\u9898\\u5217\\u8868\",\"weigh\":\"0\",\"status\":\"normal\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko', '1554401707');
 INSERT INTO `fa_admin_log` VALUES ('49', '1', 'admin888', '/admin/user/rule/add?dialog=1', '会员管理 会员规则 添加', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"1\",\"name\":\"index\\/topic\\/detail\",\"title\":\"\\u8bdd\\u9898\\u8be6\\u60c5\",\"remark\":\"\\u8bdd\\u9898\\u8be6\\u60c5\",\"weigh\":\"0\",\"status\":\"normal\"}}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko', '1554401737');
 INSERT INTO `fa_admin_log` VALUES ('50', '1', 'admin888', '/admin/user/group/edit/ids/1?dialog=1', '会员管理 会员分组 编辑', '{\"dialog\":\"1\",\"row\":{\"rules\":\"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17\",\"name\":\"\\u9ed8\\u8ba4\\u7ec4\",\"status\":\"normal\"},\"ids\":\"1\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko', '1554401820');
+INSERT INTO `fa_admin_log` VALUES ('51', '1', 'admin888', '/admin.php/index/login?url=%2Fadmin.php', '登录', '{\"url\":\"\\/admin.php\",\"__token__\":\"50c2b35aca0355c6b484f2d8864be872\",\"username\":\"admin888\",\"captcha\":\"mqaf\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', '1555848368');
+INSERT INTO `fa_admin_log` VALUES ('52', '1', 'admin888', '/admin.php/user/user/edit/ids/3?dialog=1', '会员管理 会员管理 编辑', '{\"dialog\":\"1\",\"row\":{\"group_id\":\"1\",\"username\":\"member1\",\"nickname\":\"member1\",\"password\":\"\",\"email\":\"abc@qq.com\",\"mobile\":\"18919916709\",\"avatar\":\"\\/uploads\\/20190421\\/288827e8d4243098441d999d44febde4.jpg\",\"level\":\"1\",\"gender\":\"0\",\"birthday\":\"\",\"bio\":\"\",\"money\":\"0.00\",\"score\":\"0\",\"successions\":\"1\",\"maxsuccessions\":\"1\",\"prevtime\":\"2019-04-21 16:55:52\",\"logintime\":\"2019-04-21 16:55:52\",\"loginip\":\"127.0.0.1\",\"loginfailure\":\"0\",\"joinip\":\"127.0.0.1\",\"jointime\":\"2019-04-21 16:55:52\",\"status\":\"normal\"},\"ids\":\"3\"}', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36', '1555848393');
 
 -- ----------------------------
 -- Table structure for `fa_area`
@@ -3909,7 +3911,7 @@ CREATE TABLE `fa_attachment` (
   `storage` varchar(100) NOT NULL DEFAULT 'local' COMMENT '存储位置',
   `sha1` varchar(40) NOT NULL DEFAULT '' COMMENT '文件 sha1编码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='附件表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='附件表';
 
 -- ----------------------------
 -- Records of fa_attachment
@@ -3917,6 +3919,7 @@ CREATE TABLE `fa_attachment` (
 INSERT INTO `fa_attachment` VALUES ('1', '1', '0', '/assets/img/qrcode.png', '150', '150', 'png', '0', '21859', 'image/png', '', '1499681848', '1499681848', '1499681848', 'local', '17163603d0263e4838b9387ff2cd4877e8b018f6');
 INSERT INTO `fa_attachment` VALUES ('2', '0', '2', '/uploads/20190324/4649397c1e2cf9fb52968b4fe11059b8.png', '32', '34', 'png', '0', '7461', 'image/png', '', '1553406668', '1553406668', '1553406668', 'local', 'a43168545fdb57d98b8818b6eacf38749ed321f0');
 INSERT INTO `fa_attachment` VALUES ('3', '0', '1', '/uploads/20190404/26cdacb896421bc648894461642609be.jpg', '1600', '1000', 'jpg', '0', '188482', 'image/jpeg', '', '1554388766', '1554388766', '1554388766', 'local', '3d691a245cea8a302b139e03f466c53dd6fb571b');
+INSERT INTO `fa_attachment` VALUES ('4', '0', '3', '/uploads/20190421/288827e8d4243098441d999d44febde4.jpg', '1920', '1200', 'jpg', '0', '344530', 'image/jpeg', '', '1555837105', '1555837105', '1555837105', 'local', '451e70c49f295f697e95a6c4f46fa289280091e7');
 
 -- ----------------------------
 -- Table structure for `fa_auth_group`
@@ -4224,7 +4227,7 @@ CREATE TABLE `fa_comment` (
   `createtime` int(11) unsigned NOT NULL COMMENT '发表评论时间',
   `ischecked` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='评论是否通过审核\r\n1通过审核\r\n0未通过审核';
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='评论是否通过审核\r\n1通过审核\r\n0未通过审核';
 
 -- ----------------------------
 -- Records of fa_comment
@@ -4232,6 +4235,42 @@ CREATE TABLE `fa_comment` (
 INSERT INTO `fa_comment` VALUES ('1', '第一篇评论，我的评论1\r\n第一篇评论，我的评论1\r\n第一篇评论，我的评论1\r\n第一篇评论，我的评论1\r\n第一篇评论，我的评论1\r\n第一篇评论，我的评论1\r\n第一篇评论，我的评论1\r\n第一篇评论，我的评论1\r\n第一篇评论，我的评论1', '6', '1', '1554403550', null);
 INSERT INTO `fa_comment` VALUES ('2', '第二篇评论，我的评论2\r\n第二篇评论，我的评论2\r\n第二篇评论，我的评论2\r\n第二篇评论，我的评论2\r\n第二篇评论，我的评论2\r\n第二篇评论，我的评论2\r\n第二篇评论，我的评论2\r\n第二篇评论，我的评论2\r\n第二篇评论，我的评论2\r\n第二篇评论，我的评论2', '6', '1', '1554403592', null);
 INSERT INTO `fa_comment` VALUES ('3', '第三篇评论，我的评论3\r\n第三篇评论，我的评论3\r\n第三篇评论，我的评论3\r\n第三篇评论，我的评论3\r\n第三篇评论，我的评论3\r\n第三篇评论，我的评论3\r\n第三篇评论，我的评论3\r\n第三篇评论，我的评论3\r\n第三篇评论，我的评论3\r\n第三篇评论，我的评论3', '6', '1', '1554403624', null);
+INSERT INTO `fa_comment` VALUES ('4', '评论区1', '3', '2', '1555835597', null);
+INSERT INTO `fa_comment` VALUES ('5', '修改评论内容', '3', '2', '1555836874', null);
+INSERT INTO `fa_comment` VALUES ('6', '你认为我们都是一家人，吃完饭浩浩荡荡的一起散步？你认为我们都是一家人，吃完饭浩浩荡荡的一起散步？你认为我们都是一家人，吃完饭浩浩荡荡的一起散步？你认为我们都是一家人，吃完饭浩浩荡荡的一起散步？你认为我们都是一家人，吃完饭浩浩荡荡的一起散步？', '3', '3', '1555837134', null);
+
+-- ----------------------------
+-- Table structure for `fa_comment2`
+-- ----------------------------
+DROP TABLE IF EXISTS `fa_comment2`;
+CREATE TABLE `fa_comment2` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `topic_id` int(10) unsigned DEFAULT NULL COMMENT '帖子id',
+  `topic_type` char(255) DEFAULT NULL COMMENT '帖子分类',
+  `content` varchar(255) DEFAULT NULL COMMENT '评论内容',
+  `fromid` int(11) DEFAULT NULL COMMENT '评论者id',
+  `touid` int(11) DEFAULT NULL COMMENT '被评论者uid',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of fa_comment2
+-- ----------------------------
+INSERT INTO `fa_comment2` VALUES ('1', '3', '情感', '修改了表结构的评论', '3', null);
+INSERT INTO `fa_comment2` VALUES ('2', '3', '情感', '再次进行评论，我的账号是member1', '3', null);
+INSERT INTO `fa_comment2` VALUES ('3', '3', '情感', '我是www 对主题3进行评论', '2', null);
+INSERT INTO `fa_comment2` VALUES ('4', '3', '情感', '我是www对主题3再次进行评论', '2', null);
+INSERT INTO `fa_comment2` VALUES ('5', '3', '情感', '我是member1发表的评论', '3', '2');
+INSERT INTO `fa_comment2` VALUES ('6', '3', '情感', '这是member1第二个回复', '3', '2');
+INSERT INTO `fa_comment2` VALUES ('7', '3', '情感', '我是www,对member1的评论进行回复', '2', '3');
+INSERT INTO `fa_comment2` VALUES ('8', '3', '情感', '第三个用户发布测试评论', '1', null);
+INSERT INTO `fa_comment2` VALUES ('9', '3', '情感', '第三个用户发布测试评论2', '1', null);
+INSERT INTO `fa_comment2` VALUES ('10', '3', '情感', '第三个用户发布测试评论3', '1', null);
+INSERT INTO `fa_comment2` VALUES ('11', '3', '情感', '第三个用户发布测试评论4', '1', null);
+INSERT INTO `fa_comment2` VALUES ('12', '3', '情感', '这是一篇回复，来自admin的', '1', '2');
+INSERT INTO `fa_comment2` VALUES ('13', '7', '情感', '盖楼式评论真的好难哦', '3', null);
+INSERT INTO `fa_comment2` VALUES ('14', '7', '情感', '难个p啊，一点不难，你是不是没写过这种无限级的分类', '1', '3');
+INSERT INTO `fa_comment2` VALUES ('15', '7', '情感', '不一样的，这个怎么能是无限级分类呢', '3', '1');
 
 -- ----------------------------
 -- Table structure for `fa_config`
@@ -4396,7 +4435,7 @@ CREATE TABLE `fa_topic` (
   `like` int(11) DEFAULT NULL COMMENT '点赞数目',
   `thumbnail` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='评论是否通过审核\r\n1通过审核\r\n0未通过审核';
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='评论是否通过审核\r\n1通过审核\r\n0未通过审核';
 
 -- ----------------------------
 -- Records of fa_topic
@@ -4407,6 +4446,7 @@ INSERT INTO `fa_topic` VALUES ('3', '镜花缘相亲第三个帖子', '远走高
 INSERT INTO `fa_topic` VALUES ('4', '镜花缘相亲第四个帖子', '多余的温柔 - 小曼\r\n词：崔伟立\r\n曲：崔伟立\r\n编曲：孙侠\r\n制作人：陈伟\r\n出品人：王峰\r\n出品：浙江壹歌文化传媒有限公司\r\n走过人来人往的街头\r\n茫茫人海终把你邂逅\r\n最爱你那迷人的眼眸\r\n我愿意为你付出我所有\r\n再次经过那一个路口\r\n身边却没有你再牵手\r\n那些伤心过往似烈酒\r\n难过一次次涌上心头\r\n原来曾经说的天长和地久\r\n只不过是一些多余的温柔\r\n都怪我当初太笨太不懂\r\n痴痴把你来挽留\r\n原来曾经说的相爱到白头\r\n只不过是一些多余的温柔\r\n可是心中的你赶也赶不走\r\n一生在原地把你等候\r\n走过人来人往的街头\r\n茫茫人海终把你邂逅\r\n最爱你那迷人的眼眸\r\n我愿意为你付出我所有\r\n再次经过那一个路口\r\n身边却没有你再牵手\r\n那些伤心过往似烈酒\r\n难过一次次涌上心头\r\n原来曾经说的天长和地久\r\n只不过是一些多余的温柔\r\n都怪我当初太笨太不懂\r\n痴痴把你来挽留\r\n原来曾经说的相爱到白头\r\n只不过是一些多余的温柔\r\n可是心中的你赶也赶不走\r\n一生在原地把你等候\r\n原来曾经说的天长和地久\r\n只不过是一些多余的温柔\r\n都怪我当初太笨太不懂\r\n痴痴把你来挽留\r\n原来曾经说的相爱到白头\r\n只不过是一些多余的温柔\r\n可是心中的你赶也赶不走\r\n一生在原地把你等候\r\n可是心中的你赶也赶不走\r\n一生在原地把你等候\r\n', '1', '1554402155', null, null, null, null, null);
 INSERT INTO `fa_topic` VALUES ('5', '镜花缘相亲第五个帖子', '唱腔另类 - 子芮\r\n词：子芮\r\n曲：子芮\r\n让我做你的眼睛\r\n说那样你才看得清\r\n这首情歌唱给你听\r\n把你当作天上星\r\n是你让我多感动\r\n我只好用力去歌颂\r\n你离开的那场梦\r\n他始终让我心痛\r\n气势另类仍嚣张\r\n说道家猛龙横过江\r\n手举七尺夺魂枪\r\n我威名不败镇八方\r\n你的眼那太妩媚\r\n千杯烈酒求一醉\r\n一笔朱砂倾城的泪\r\n王的孤独谁体会\r\n爱 断梦 断人肠\r\n我恨 你没在身旁\r\n痴 今生写醉阳\r\n我狂 天涯两茫茫\r\n爱情还在那断崖边\r\n桃花痴我 算云烟\r\n我抽的那上上签\r\n为何没把我手牵\r\n风起云涌变幻之间\r\n如今时光过云烟\r\n若你不在我身边\r\n我怎能还是上仙\r\n那夜朦胧细雨\r\n是清风竖起旋律\r\n但能请你铭记\r\n我愿意为你提笔\r\n想当年我万人推\r\n我单枪匹马坐王位\r\n流河东我思乡音\r\n一步走错三苦心\r\n风起清风幽梦\r\n我烟雨清雾清幽\r\n佳人锦绣白头\r\n是玲歌与你白头\r\n刀 怒斩雪翼雕\r\n我山 豪迈冲云霄\r\n火 翻腾在燃烧\r\n这海 掀起万波涛\r\n三生三世十里桃花\r\n他就像是一道疤\r\n像风像雨飞沙\r\n像空气一样难抓\r\n', '1', '1554402190', null, null, null, null, null);
 INSERT INTO `fa_topic` VALUES ('6', '镜花缘相亲第六个帖子', '红昭愿 - 音阙诗听\r\n词：荒唐客\r\n曲：殇小谨\r\n编曲：朱鸽\r\n混音：殇小谨\r\n制作人：殇小谨\r\n配唱制作人：殇小谨\r\n和声编写：殇小谨\r\n和声：殇小谨\r\n美工：睢亦\r\n混音室：Hot Music Studio\r\n监制：殇小谨/李俊羽\r\n手中雕刻生花\r\n刀锋千转蜿蜒成画\r\n盛名功德塔\r\n是桥畔某处人家\r\n春风绕过发梢红纱\r\n刺绣赠他\r\n眉目刚烈拟作妆嫁\r\n轰烈流沙枕上白发\r\n杯中酒比划\r\n年少风雅鲜衣怒马\r\n也不过一刹那\r\n难免疏漏儿时檐下\r\n莫测变化\r\n隔却山海\r\n转身从容煎茶\r\n一生长\r\n重寄一段过往\r\n将希冀都流放\r\n可曾添些荒唐\r\n才记得你的模样\r\n一身霜\r\n谁提笔只两行\r\n换一隅你安康\r\n便销得这沧桑\r\n你还在我的心上\r\n手中雕刻生花\r\n刀锋千转蜿蜒成画\r\n盛名功德塔\r\n是桥畔某处人家\r\n春风绕过发梢红纱\r\n刺绣赠他\r\n眉目刚烈拟作妆嫁\r\n轰烈流沙枕上白发\r\n杯中酒比划\r\n年少风雅鲜衣怒马\r\n也不过一刹那\r\n难免疏漏儿时檐下\r\n莫测变化\r\n隔却山海\r\n转身从容煎茶\r\n一生长\r\n重寄一段过往\r\n将希冀都流放\r\n可曾添些荒唐\r\n才记得你的模样\r\n一身霜\r\n谁提笔只两行\r\n换一隅你安康\r\n便销得这沧桑\r\n你还在我的心上\r\n一生长\r\n重寄一段过往\r\n将希冀都流放\r\n可曾添些荒唐\r\n才记得你的模样\r\n一身霜\r\n谁提笔只两行\r\n换一隅你安康\r\n便销得这沧桑\r\n你还在我的心上\r\n', '1', '1554402230', null, null, null, null, null);
+INSERT INTO `fa_topic` VALUES ('7', '研究盖楼式评论的数据结构', '研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构\r\n\r\n研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构\r\n\r\n研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构\r\n\r\n研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构研究盖楼式评论的数据结构', '2', '1555834848', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for `fa_user`
@@ -4445,13 +4485,14 @@ CREATE TABLE `fa_user` (
   KEY `username` (`username`),
   KEY `email` (`email`),
   KEY `mobile` (`mobile`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='会员表';
 
 -- ----------------------------
 -- Records of fa_user
 -- ----------------------------
-INSERT INTO `fa_user` VALUES ('1', '1', 'admin', 'admin', '8a5fa80b35514f0382f6bf0eebc6e783', 'zOQJTy', 'admin@163.com', '13888888888', '/uploads/20190404/26cdacb896421bc648894461642609be.jpg', '0', '0', '2017-04-15', '', '0.00', '0', '2', '2', '1554398022', '1554403197', '127.0.0.1', '0', '127.0.0.1', '1491461418', '0', '1554403197', '', 'normal', '');
-INSERT INTO `fa_user` VALUES ('2', '1', 'www', 'www', 'e25387361d150d87ac6ebd1d18f668e1', 'zM3i6R', '1620016116@qq.com', '18394333958', '/uploads/20190324/4649397c1e2cf9fb52968b4fe11059b8.png', '1', '0', '0000-00-00', '坚毅果敢', '0.00', '0', '2', '2', '1554388255', '1554389016', '127.0.0.1', '0', '127.0.0.1', '1553405891', '1553405891', '1554389016', '', 'normal', '');
+INSERT INTO `fa_user` VALUES ('1', '1', 'admin', 'admin', '8a5fa80b35514f0382f6bf0eebc6e783', 'zOQJTy', 'admin@163.com', '13888888888', '/uploads/20190404/26cdacb896421bc648894461642609be.jpg', '0', '0', '2017-04-15', '', '0.00', '0', '1', '2', '1554403197', '1555848436', '127.0.0.1', '0', '127.0.0.1', '1491461418', '0', '1555848436', '', 'normal', '');
+INSERT INTO `fa_user` VALUES ('2', '1', 'www', 'www', 'e25387361d150d87ac6ebd1d18f668e1', 'zM3i6R', '1620016116@qq.com', '18394333958', '/uploads/20190324/4649397c1e2cf9fb52968b4fe11059b8.png', '1', '0', '0000-00-00', '坚毅果敢', '0.00', '0', '1', '2', '1555834780', '1555844473', '127.0.0.1', '0', '127.0.0.1', '1553405891', '1553405891', '1555844473', '', 'normal', '');
+INSERT INTO `fa_user` VALUES ('3', '1', 'member1', 'member1', '65c35f278188e5ab6ad92f289b73990b', 'uURiyo', 'abc@qq.com', '18919916709', '/uploads/20190421/288827e8d4243098441d999d44febde4.jpg', '1', '0', '0000-00-00', '', '0.00', '0', '1', '1', '1555836952', '1555836952', '127.0.0.1', '0', '127.0.0.1', '1555836952', '1555836952', '1555848392', '', 'normal', '');
 
 -- ----------------------------
 -- Table structure for `fa_user_group`
@@ -4564,6 +4605,8 @@ CREATE TABLE `fa_user_token` (
 -- ----------------------------
 -- Records of fa_user_token
 -- ----------------------------
+INSERT INTO `fa_user_token` VALUES ('47794c2cf38fa5f96130240c87ad7133ceecf695', '1', '1555848436', '1558440436');
+INSERT INTO `fa_user_token` VALUES ('77d29c259bc08d5acf9b5eb13ef46a0d9af11007', '3', '1555836952', '1558428952');
 INSERT INTO `fa_user_token` VALUES ('9da92be6b9acf1d5724c9541ff4967b67740ad18', '2', '1553445423', '1556037423');
 INSERT INTO `fa_user_token` VALUES ('b9a2749a80a013466508b22744b74469bcc9f757', '1', '1554403197', '1556995197');
 INSERT INTO `fa_user_token` VALUES ('de4170361c6ec78171011943d0805d960539c512', '2', '1553405891', '1555997891');

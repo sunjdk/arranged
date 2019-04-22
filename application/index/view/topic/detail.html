@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>主题详情</title>
+	<link rel="stylesheet" href="__PUBLIC__index/pc/layui/css/layui.css" />
 </head>
 <body>
 	<table align="center" border=1>
@@ -10,7 +11,7 @@
 			<td><h5>{$topic.title}</h5>{$topic.createtime|date="Y-m-d H:i:s",###}  </td>			
 		</tr>
 		<tr>
-			<td><b>{$topicuser.user.username}</b> <b><img width="50" height="50" src="{$topicuser.user.avatar}" alt="" /></b></td>
+			<td><b>{$topic.user.username}</b> <b><img width="50" height="50" src="{$topic.user.avatar}" alt="" /></b></td>
 		</tr>
 		<tr><td><p>{$topic.content}</p></td></tr>
 		<tr>
@@ -39,11 +40,39 @@
 			
 			</td>
 		</tr>
-		{volist name="topic.comment" id='vo'}
+		<!-- {volist name="topic.comment" id='vo'}
 			<tr>
-				<td>{$vo.content|mb_substr=0,30}</td>
+				<td>{$vo.user.username} <img src="{$vo.user.avatar}" width="50" height="50" /><br>   {$vo.content|mb_substr=0,30}
+					<a href="javascript:openMsg({$vo.id},{$vo.user.id});">回复</a>
+				</td>
+			</tr>
+		{/volist} -->
+		
+		
+		
+		{volist name="topic.comment2" id='vo'}
+			<tr>
+				<td>{$vo.fromuser.username}  {notempty name="$vo.touser.username"}回复{$vo.touser.username}{/notempty} <!-- <img src="{$vo.fromuser.avatar}" width="50" height="50" /> --><br>   {$vo.content|mb_substr=0,30}
+					<a href="javascript:openMsg({$topic.id},{$vo.fromuser.id},'{$vo.fromuser.username}')">回复</a>
+				</td>
 			</tr>
 		{/volist}
 	</table>
+	<script src="__PUBLIC__index/pc/layui/layui.all.js"></script>
+	<script>
+		function openMsg(id,uid,name){
+			//alert(id);
+			var id=id;
+			var uid=uid;
+			var name=name;
+			var content='<form action="{:url("comment/adddo")}" method="post"><div style="text-align:center;overflow:hidden"><textarea name="content" placeholder="回复：'+name+'" style="width:100%" rows="10"></textarea><br><input type="text" name="topic_id" value="'+id+'"/><input type="text" name="touid" value="'+uid+'"/>             请输入验证码：<input type="text" name="verify" /><br><img onclick="this.src="{:captcha_src()}?"+Math.random();" style="cursor:pointer" src="{:captcha_src()}" alt="captcha" />                    </div><div style="text-align:center"><button style="width:50%;padding:10px" type="submit">提交</button></div></from>';
+			layer.open({
+				'type':1,
+				'title':'回复评论',
+				'area': ['500px', '350px'],
+				'content':content
+			});
+		}
+	</script>
 </body>
 </html>
